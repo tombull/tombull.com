@@ -1,0 +1,20 @@
+{
+  "name": "tombull.com",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0",
+    "wrangler": "^4.67.0"
+  },
+  "dependencies": {
+    "@paper-design/shaders": "^0.0.71"
+  }
+}
