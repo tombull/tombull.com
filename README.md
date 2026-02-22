@@ -38,3 +38,16 @@ pnpm build
 ```
 
 The output will be generated in the `dist/` directory as a single, fully-inlined, minified `index.html` file, ready for static deployment.
+
+## Deployment
+
+This project uses GitHub Actions for continuous deployment. Every push to the `main` branch triggers a workflow that automatically:
+
+1. Checks out the repository and sets up Node.js with `pnpm`.
+2. Installs dependencies and builds the minified production output.
+3. Deploys the `dist/` directory directly to Cloudflare Workers static assets using `wrangler`.
+
+The workflow configuration is located at `.github/workflows/deploy.yml`. It requires two repository secrets to be configured in GitHub to successfully authenticate with Cloudflare:
+
+- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare Account ID.
+- `CLOUDFLARE_API_TOKEN`: A Cloudflare API token with permission to edit Workers projects.
